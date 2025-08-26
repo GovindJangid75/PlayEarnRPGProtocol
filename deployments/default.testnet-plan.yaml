@@ -1,0 +1,18 @@
+---
+id: 0
+name: Testnet deployment
+network: testnet
+stacks-node: "https://api.testnet.hiro.so"
+bitcoin-node: "http://blockstack:blockstacksystem@bitcoind.testnet.stacks.co:18332"
+plan:
+  batches:
+    - id: 0
+      transactions:
+        - contract-publish:
+            contract-name: PlayEarnRPGProtocol
+            expected-sender: ST1M9KK68W5XRV9X0AK4D0J1Y4CW322GZQYD751EQ
+            cost: 59190
+            path: "contracts\\PlayEarnRPGProtocol.clar"
+            anchor-block-only: true
+            clarity-version: 3
+      epoch: "3.2"
