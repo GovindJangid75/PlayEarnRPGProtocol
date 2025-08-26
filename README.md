@@ -45,7 +45,9 @@ Our vision is to create a fully decentralized gaming ecosystem where:
 
 ## Contract Address Details
 
-*Contract addresses will be updated upon deployment to Stacks mainnet and testnet:*
+Contract ID=ST1M9KK68W5XRV9X0AK4D0J1Y4CW322GZQYD751EQ.PlayEarnRPGProtocol
+<img width="1359" height="640" alt="image" src="https://github.com/user-attachments/assets/c438d85b-36db-4245-be15-5ed49c2513cc" />
+
 
 **Mainnet Contract Address:** `[To be added after deployment]`
 
@@ -68,9 +70,3 @@ To interact with the PlayEarn RPG Protocol:
 3. **View Stats**: Use read-only functions to check character progression and asset details
 4. **Trade Assets**: Transfer assets between players using the built-in NFT functionality
 
-For detailed technical documentation and integration guides, visit our documentation portal once deployed.
-
-**Join our community:**
-- Discord: [Coming Soon]
-- Twitter: [Coming Soon] 
-- Telegram: [Coming Soon]
