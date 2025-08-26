@@ -50,15 +50,7 @@ Contract ID=ST1M9KK68W5XRV9X0AK4D0J1Y4CW322GZQYD751EQ.PlayEarnRPGProtocol
 <img width="1359" height="640" alt="Screenshot 2025-08-26 121712" src="https://github.com/user-attachments/assets/c2b48c4a-2953-4a05-85a8-7972f2a911aa" />
 
 
-**Mainnet Contract Address:** `[To be added after deployment]`
 
-**Testnet Contract Address:** `[To be added after deployment]`
-
-**Contract Name:** `playearn-rpg-protocol`
-
-**Deployment Block:** `[To be added after deployment]`
-
-**Verification Status:** `[To be verified post-deployment]`
 
 ---
 
