@@ -1,21 +1,48 @@
+/// <reference types="vitest" />
 
-import { describe, expect, it } from "vitest";
-
-const accounts = simnet.getAccounts();
-const address1 = accounts.get("wallet_1")!;
+import { defineConfig } from "vite";
+import {
+  vitestSetupFilePath,
+  getClarinetVitestsArgv,
+} from "@hirosystems/clarinet-sdk/vitest";
 
 /*
-  The test below is an example. To learn more, read the testing documentation here:
-  https://docs.hiro.so/stacks/clarinet-js-sdk
+  Vitest is configured to work with Clarinet + Simnet.
+
+  - `vitest-environment-clarinet` initializes Clarinet SDK 
+    and exposes the `simnet` object globally.
+  - `vitestSetupFilePath` will:
+      • run before/after hooks to init simnet and collect coverage/costs
+      • load custom Vitest matchers (toBeUint, etc.)
+  - `getClarinetVitestsArgv()` parses CLI options like:
+      • vitest run -- --manifest ./Clarinet.toml
+      • vitest run -- --coverage --costs
 */
 
-describe("example tests", () => {
-  it("ensures simnet is well initialised", () => {
-    expect(simnet.blockHeight).toBeDefined();
-  });
+export default defineConfig({
+  test: {
+    // Use clarinet-powered test environment
+    environment: "clarinet",
 
-  // it("shows an example", () => {
-  //   const { result } = simnet.callReadOnlyFn("counter", "get-counter", [], address1);
-  //   expect(result).toBeUint(0);
-  // });
+    // Run tests in a single isolated fork
+    pool: "forks",
+    poolOptions: {
+      forks: { singleFork: true },
+      threads: { singleThread: true },
+    },
+
+    // Setup files (Clarinet hooks + your custom setup if needed)
+    setupFiles: [vitestSetupFilePath],
+
+    // Pass clarinet-specific options
+    environmentOptions: {
+      clarinet: {
+        ...getClarinetVitestsArgv(),
+        // You can also override here, e.g.:
+        // manifest: "./Clarinet.toml",
+        // coverage: true,
+        // costs: true,
+      },
+    },
+  },
 });
